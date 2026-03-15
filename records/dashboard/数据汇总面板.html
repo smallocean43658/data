@@ -324,7 +324,7 @@
       currentTimeValue.textContent = formatNow(now);
       const generatedAt = parsePageTime(generatedAtText);
       if (!generatedAt) return;
-      const refreshAt = new Date(generatedAt.getTime() + 15 * 60 * 1000);
+      const refreshAt = new Date(generatedAt.getTime() + 15 * 60 * 1000 + 30 * 1000);
       refreshNotice.classList.toggle("visible", now >= refreshAt);
     }
 
