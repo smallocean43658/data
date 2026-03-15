@@ -111,9 +111,14 @@
       padding:9px 14px;
       color:var(--muted);
     }
+    .chip-label {
+      color:var(--muted);
+      font-weight:500;
+    }
     .chip strong {
       color:var(--ink);
-      font-weight:600;
+      font-weight:800;
+      letter-spacing:.01em;
     }
     .chip-alert {
       display:none;
@@ -167,6 +172,10 @@
       border-radius:999px;
       background:var(--note-bg);
       border:1px solid rgba(126,103,74,.16);
+    }
+    .table-note strong {
+      color:var(--ink);
+      font-weight:800;
     }
     .table-wrap {
       overflow:auto;
@@ -224,18 +233,18 @@
         </select>
       </div>
       <div class="meta">
-        <div class="chip">品种数：555</div>
-        <div class="chip">最新价格时间：2026-03-15 20:45:00</div>
-        <div class="chip">当前时间：<strong id="currentTimeValue">--</strong></div>
+        <div class="chip"><span class="chip-label">品种数：</span><strong>555</strong></div>
+        <div class="chip"><span class="chip-label">最新价格时间：</span><strong>2026-03-15 20:45:00</strong></div>
+        <div class="chip"><span class="chip-label">当前时间：</span><strong id="currentTimeValue">--</strong></div>
         <div id="refreshNotice" class="chip chip-alert">
-          <span>检测到可能有新文件，建议刷新</span>
+          <span><strong>检测到可能有新文件</strong>，建议刷新</span>
           <button id="refreshNow" type="button">立即刷新</button>
         </div>
       </div>
       <div class="toolbar">
         <input id="search" type="search" placeholder="搜索品种，例如 BTC / XAU">
         <div class="toolbar-group">
-          <span class="muted">价格区间</span>
+          <span class="muted">高低价区间</span>
           <div id="priceWindowButtons" class="segmented">
             <button type="button" data-window="1">1天</button>
             <button type="button" data-window="3">3天</button>
@@ -257,9 +266,9 @@
       </div>
     </section>
     <div class="table-guides">
-      <div class="table-note">排序提示：点击任意表头可按该列升序或降序排序。</div>
-      <div class="table-note">同一时间只显示当前选中区间的一组最高价、最低价、相对高点跌幅和相对低点涨幅。</div>
-      <div class="table-note">成交量使用最近 N 小时的 K 线成交额汇总，单位为 USDT。</div>
+      <div class="table-note"><strong>排序提示：</strong>点击任意表头可按该列升序或降序排序。</div>
+      <div class="table-note"><strong>当前区间显示：</strong>一组最高价、最低价、相对高点跌幅和相对低点涨幅。</div>
+      <div class="table-note"><strong>成交量：</strong>使用最近 N 小时的 K 线成交额汇总，单位为 USDT。</div>
     </div>
     <div class="table-wrap">
       <table id="overview">
